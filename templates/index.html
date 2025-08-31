@@ -15,7 +15,7 @@
     <nav>
       <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo" />
       
-      <ul style="color: black;">
+      <ul>
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="#about">من نحن</a></li>
         <li><a href="#services">خدماتنا</a></li>
@@ -26,23 +26,19 @@
   </header>
 
   <!-- الرئيسية -->
-  <section id="home" class="hero" style="background-color: #eaf4ff; padding: 80px 0;">
-    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; text-align: right; direction: rtl;">
-
-      <!-- ✅ النص -->
-      <div class="fade-in-right" style="flex: 1; min-width: 300px;">
-        <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">الريادة في الحلول التقنية</h2>
-        <p style="font-size: 18px;">شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني.</p>
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="fade-in-right">
+        <h2>الريادة في الحلول التقنية</h2>
+        <p>شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني.</p>
       </div>
 
-      <!-- ✅ الصورة -->
-      <div class="fade-in-left" style="flex: 1; min-width: 300px;">
+      <div class="fade-in-left">
         <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" 
              alt="حلول تقنية"
-             style="width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); data-aos="fade-up" data-aos-duration="1000" data-aos="zoom-in"
-           data-aos-offset="200" data-aos-delay="100" data-aos-duration="1500"">
+             class="hero-image"
+             data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
       </div>
-
     </div>
   </section>
 
@@ -97,20 +93,9 @@
       <h2>اتصل بنا</h2>
 
       <div class="contact-info">
-        <p style="display: flex; align-items: center; gap: 8px;">
-          <span style="color: #d63384;">📞</span>
-          <span dir="ltr">+966-566-3616-33</span>
-        </p>
-
-        <p style="display: flex; align-items: center; gap: 8px;">
-          <span style="color: #0d6efd;">📧</span>
-          <span dir="ltr">info@mnartalnkhba.com</span>
-        </p>
-
-        <p style="display: flex; align-items: center; gap: 8px;">
-          <span style="color: #dc3545;">📍</span>
-          <span>King Faisal Dt., Riyadh 13215</span>
-        </p>
+        <p><span>📞</span><span dir="ltr">+966-566-3616-33</span></p>
+        <p><span>📧</span><span dir="ltr">info@mnartalnkhba.com</span></p>
+        <p><span>📍</span><span>King Faisal Dt., Riyadh 13215</span></p>
       </div>
 
       <form method="POST" action="/send">
