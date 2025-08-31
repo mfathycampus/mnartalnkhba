@@ -29,23 +29,10 @@ body {
 }
 
 header {
-  background-color: #f4f6fa; /* لون فاتح للهيدر */
-  color: #111827; /* لون داكن للخط */
+  background-color: #f4f6fa;
+  color: #111827;
   border-bottom: 1px solid #e5e7eb;
 }
-nav ul li a {
-  color: #000000 !important;
-  font-weight: 600;
-  font-size: 16px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-
-nav ul li a:hover {
-  color: #1d4ed8 !important; /* أزرق جذاب عند التحويم */
-}
-
 
 nav {
   display: flex;
@@ -55,6 +42,7 @@ nav {
   margin: auto;
   padding: 10px 20px;
   flex-direction: row-reverse;
+  flex-wrap: wrap;
 }
 
 nav ul {
@@ -63,30 +51,48 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
-  color: white;
+  color: #000 !important;
+  font-weight: 600;
+  font-size: 16px;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1d4ed8 !important;
 }
 
 .logo {
-  height: 80px;
-  max-height: 80px;
+  height: 70px;
   object-fit: contain;
 }
-
 
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 40px 20px;
-  text-align: center;
 }
 
-.hero {
-  background-color: #e9f3fe;
-  padding: 60px 20px;
+.hero h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .services-grid {
@@ -98,7 +104,7 @@ nav ul li a {
 .service-card {
   background: white;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
@@ -131,7 +137,8 @@ form {
   margin-top: 20px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   padding: 10px;
   font-size: 16px;
   width: 100%;
@@ -142,10 +149,59 @@ form button {
   color: white;
   padding: 10px;
   cursor: pointer;
+  border: none;
+  font-size: 16px;
 }
 
 footer {
   background-color: #f1f1f1;
   text-align: center;
   padding: 20px;
+}
+
+/* ✅ موبايل */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .projects-gallery img {
+    width: 90%;
+  }
+  .fade-in-right {
+  animation: fadeInRight 1s ease-in-out;
+  }
+
+.fade-in-left {
+  animation: fadeInLeft 1s ease-in-out;
+  }
+
 }

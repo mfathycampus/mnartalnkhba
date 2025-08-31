@@ -13,7 +13,10 @@
   <!-- الهيدر -->
   <header>
     <nav>
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo" />
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo" 
+           data-aos="fade-up" data-aos-duration="1000" data-aos="zoom-in"
+           data-aos-offset="200" data-aos-delay="100" data-aos-duration="1500" />
+      
       <ul style="color: black;">
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="#about">من نحن</a></li>
@@ -25,27 +28,26 @@
   </header>
 
   <!-- الرئيسية -->
-  <!-- Hero Section -->
-<!-- Hero Section -->
-<section id="home" class="hero" style="background-color: #eaf4ff; padding: 80px 0;">
-  <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; text-align: right; direction: rtl;">
+  <section id="home" class="hero" style="background-color: #eaf4ff; padding: 80px 0;">
+    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; text-align: right; direction: rtl;">
 
-    <!-- ✅ النص -->
-    <div style="flex: 1; min-width: 300px; animation: fadeInRight 1s ease-in-out;">
-      <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">الريادة في الحلول التقنية</h2>
-      <p style="font-size: 18px;">شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني.</p>
+      <!-- ✅ النص -->
+      <div class="fade-in-right" style="flex: 1; min-width: 300px;">
+        <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">الريادة في الحلول التقنية</h2>
+        <p style="font-size: 18px;">شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني.</p>
+      </div>
+
+      <!-- ✅ الصورة -->
+      <div class="fade-in-left" style="flex: 1; min-width: 300px;">
+        <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" 
+             alt="حلول تقنية"
+             style="width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">
+      </div>
+
     </div>
+  </section>
 
-    <!-- ✅ الصورة -->
-    <div style="flex: 1; min-width: 300px; animation: fadeInLeft 1s ease-in-out;">
-      <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" 
-           alt="حلول تقنية"
-           style="width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">
-    </div>
-
-  </div>
-</section>
-<!-- من نحن -->
+  <!-- من نحن -->
   <section id="about">
     <div class="container">
       <h2>من نحن</h2>
@@ -92,36 +94,34 @@
 
   <!-- اتصل بنا -->
   <section id="contact">
-  <div class="container">
-    <h2>اتصل بنا</h2>
+    <div class="container">
+      <h2>اتصل بنا</h2>
 
-    <div class="contact-info">
+      <div class="contact-info">
+        <p style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: #d63384;">📞</span>
+          <span dir="ltr">+966-566-3616-33</span>
+        </p>
 
-      <p style="display: flex; align-items: center; gap: 8px;">
-        <span style="color: #d63384;">📞</span>
-        <span dir="ltr">+966-566-3616-33</span>
-      </p>
+        <p style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: #0d6efd;">📧</span>
+          <span dir="ltr">info@mnartalnkhba.com</span>
+        </p>
 
-      <p style="display: flex; align-items: center; gap: 8px;">
-        <span style="color: #0d6efd;">📧</span>
-        <span dir="ltr">info@mnartalnkhba.com</span>
-      </p>
+        <p style="display: flex; align-items: center; gap: 8px;">
+          <span style="color: #dc3545;">📍</span>
+          <span>King Faisal Dt., Riyadh 13215</span>
+        </p>
+      </div>
 
-      <p style="display: flex; align-items: center; gap: 8px;">
-        <span style="color: #dc3545;">📍</span>
-        <span>King Faisal Dt., Riyadh 13215</span>
-      </p>
-
+      <form method="POST" action="/send">
+        <input type="text" name="name" placeholder="الاسم" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <textarea name="message" placeholder="رسالتك" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
     </div>
-<form method="POST" action="/send">
-  <input type="text" name="name" placeholder="الاسم" required>
-  <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-  <textarea name="message" placeholder="رسالتك" required></textarea>
-  
-  <!-- ✅ زر الإرسال الوحيد -->
-  <button type="submit">إرسال</button>
-</form>
-</section>
+  </section>
 
   <footer>
     <p>© 2025 منارة النخبة المحدودة - جميع الحقوق محفوظة.</p>
