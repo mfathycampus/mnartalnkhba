@@ -1,47 +1,41 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منارة النخبة - حلول تقنية</title>
-    <!-- استدعاء ملف CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- استدعاء خطوط Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>منارة النخبة - حلول تقنية</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
+  <!-- ✅ الهيدر -->
   <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="{{ url_for('static', filename='images/logo.png') }} viewBox='0 0 24 24'><path d='M12 2L1 21h22L12 2zm0 18L5.2 9.5l1.6-2.8L12 18l5.2-11.3l1.6 2.8L12 20z'/></svg>" alt="منارة النخبة">
-      </div>
-      <ul class="nav-links">
-        <div class="close-btn">&times;</div>
+    <nav>
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo" />
+      <ul>
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="#about">من نحن</a></li>
         <li><a href="#services">خدماتنا</a></li>
         <li><a href="#projects">مشاريعنا</a></li>
         <li><a href="#contact">اتصل بنا</a></li>
       </ul>
-      <div class="hamburger">&#9776;</div>
     </nav>
   </header>
 
+  <!-- ✅ الرئيسية -->
   <section id="home" class="hero">
-    <div class="hero-container container">
-      <div class="hero-text fade-in-right">
-        <h1>الريادة في الحلول التقنية</h1>
-        <p>شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني، وتوريد.</p>
+    <div class="container">
+      <div class="text fade-in-right">
+        <h2>الريادة في الحلول التقنية</h2>
+        <p>شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني.</p>
       </div>
-      <div class="hero-image fade-in-left">
-        <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" viewBox='0 0 24 24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-13.41L10 15.17l-2.59-2.58L6 14l4 4l8-8-1.41-1.41z'/></svg>" alt="حلول تقنية">
+      <div class="image fade-in-left">
+        <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" alt="حلول تقنية">
       </div>
     </div>
   </section>
 
+  <!-- ✅ من نحن -->
   <section id="about">
     <div class="container fade-in-up">
       <h2>من نحن</h2>
@@ -53,61 +47,57 @@
     </div>
   </section>
 
+  <!-- ✅ الخدمات -->
   <section id="services">
-  <div class="container">
-    <h2>خدماتنا</h2>
-    <div class="grid">
-
-      <div class="card fade-in-up">
-        <img src="{{ url_for('static', filename='images/security_cameras.jpg') }}" alt="أنظمة المراقبة">
-        <h3>أنظمة المراقبة</h3>
-        <p>تركيب وصيانة كاميرات المراقبة بأحدث التقنيات.</p>
-      </div>
-
-      <div class="card fade-in-up">
-        <img src="{{ url_for('static', filename='images/servers_networks.jpg') }}" alt="الشبكات">
-        <h3>الشبكات</h3>
-        <p>بناء شبكات داخلية وربط الفروع بخبرة عالية.</p>
-      </div>
-
-      <div class="card fade-in-up">
-        <img src="{{ url_for('static', filename='images/fingerprint_system.jpg') }}" alt="البصمة والحضور">
-        <h3>البصمة والحضور</h3>
-        <p>أنظمة البصمة لإدارة حضور الموظفين.</p>
-      </div>
-
-      <div class="card fade-in-up">
-        <img src="{{ url_for('static', filename='images/maintenance.jpg') }}" alt="الدعم الفني">
-        <h3>الدعم الفني</h3>
-        <p>دعم فني دائم للحلول التقنية وتحديث الأنظمة.</p>
-      </div>
-
-      <div class="card fade-in-up">
-        <img src="{{ url_for('static', filename='images/keyboard_mouse.jpg') }}" alt="التوريد">
-        <h3>التوريد</h3>
-        <p>توريد جميع التجهيزات التقنية والمعدات بأعلى جودة.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-  <section id="projects">
     <div class="container">
-      <h2>مشاريعنا</h2>
-      <p style="text-align: center;">نفخر بتنفيذ مشاريع تقنية متكاملة لصالح جهات تعليمية، حكومية، وشركات خاصة.</p>
-      <div class="projects-gallery">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='{{ url_for('static', filename='images/project1.jpg') }}' viewBox='0 0 24 24'><path d='M21 21L3 3M21 3L3 21M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z'/></svg>" alt="مشروع 1" class="fade-in-up">
-        <img src="data:image/svg+xml;utf8,<svg xmlns='{{ url_for('static', filename='images/project2.jpg') }}' viewBox='0 0 24 24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/></svg>" alt="مشروع 2" class="fade-in-up">
+      <h2>خدماتنا</h2>
+      <div class="grid">
+        <div class="card fade-in-up">
+          <img src="{{ url_for('static', filename='images/security_cameras.jpg') }}" alt="أنظمة المراقبة">
+          <h3>أنظمة المراقبة</h3>
+          <p>تركيب وصيانة كاميرات المراقبة بأحدث التقنيات.</p>
+        </div>
+        <div class="card fade-in-up">
+          <img src="{{ url_for('static', filename='images/servers_networks.jpg') }}" alt="الشبكات">
+          <h3>الشبكات</h3>
+          <p>بناء شبكات داخلية وربط الفروع بخبرة عالية.</p>
+        </div>
+        <div class="card fade-in-up">
+          <img src="{{ url_for('static', filename='images/fingerprint_system.jpg') }}" alt="البصمة والحضور">
+          <h3>البصمة والحضور</h3>
+          <p>أنظمة البصمة لإدارة حضور الموظفين.</p>
+        </div>
+        <div class="card fade-in-up">
+          <img src="{{ url_for('static', filename='images/maintenance.jpg') }}" alt="الدعم الفني">
+          <h3>الدعم الفني</h3>
+          <p>دعم فني دائم للحلول التقنية وتحديث الأنظمة.</p>
+        </div>
+        <div class="card fade-in-up">
+          <img src="{{ url_for('static', filename='images/keyboard_mouse.jpg') }}" alt="التوريد">
+          <h3>التوريد</h3>
+          <p>توريد جميع التجهيزات التقنية والمعدات بأعلى جودة.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ✅ المشاريع -->
+  <section id="projects">
+    <div class="container">
+      <h2>مشاريعنا</h2>
+      <p>نفخر بتنفيذ مشاريع تقنية متكاملة لصالح جهات تعليمية، حكومية، وشركات خاصة.</p>
+      <div class="projects-gallery">
+        <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="مشروع 1" />
+        <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="مشروع 2" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ اتصل بنا -->
   <section id="contact">
     <div class="container">
       <h2>اتصل بنا</h2>
-      <div class="contact-info">
+      <div class="contact-info fade-in-up">
         <p>📞 +966-566-3616-33</p>
         <p>📧 info@mnartalnkhba.com</p>
         <p>📍 King Faisal Dt., Riyadh 13215</p>
@@ -121,11 +111,11 @@
     </div>
   </section>
 
+  <!-- ✅ الفوتر -->
   <footer>
     <p>© 2025 منارة النخبة المحدودة - جميع الحقوق محفوظة.</p>
   </footer>
 
-  <!-- استدعاء ملف JavaScript -->
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
