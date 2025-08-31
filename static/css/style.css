@@ -198,24 +198,42 @@ footer {
 
 /* ✅ الموبايل */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  .fade-in-right, .fade-in-left, .fade-in-up {
+    animation-duration: 0.8s; /* أسرع */
+  }
+
+  @keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-60px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(60px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* الهيدر */
+  nav {
     flex-direction: column;
-    background: #f4f6fa;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 100%;
+    align-items: center;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  /* الـ Hero */
+  .hero .container {
+    flex-direction: column !important;
     text-align: center;
-    padding: 15px 0;
   }
-  .nav-links.active {
-    display: flex;
-  }
-  .hamburger {
-    display: block;
-  }
-  .hero-container {
-    text-align: center;
+  .hero img {
+    max-width: 90%;
+    margin-top: 20px;
   }
 }
