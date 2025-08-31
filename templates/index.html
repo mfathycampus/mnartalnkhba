@@ -2,57 +2,48 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>منارة النخبة - حلول تقنية</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
   <!-- الهيدر -->
   <header>
-    <nav>
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo" />
-      <ul style="color: black;">
-        <li><a href="#home">الرئيسية</a></li>
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#services">خدماتنا</a></li>
-        <li><a href="#projects">مشاريعنا</a></li>
-        <li><a href="#contact">اتصل بنا</a></li>
-      </ul>
-    </nav>
+    <div class="container header-content">
+      <img src="/static/images/logo.png" alt="شعار منارة النخبة" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#projects">مشاريعنا</a></li>
+          <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <!-- الرئيسية -->
-  <!-- Hero Section -->
-<!-- Hero Section -->
-<section id="home" class="hero" style="background-color: #eaf4ff; padding: 80px 0;">
-  <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; text-align: right; direction: rtl;">
-
-    <!-- ✅ النص -->
-    <div style="flex: 1; min-width: 300px; animation: fadeInRight 1s ease-in-out;">
-      <h2 style="font-size: 32px; font-weight: bold; margin-bottom: 20px;">الريادة في الحلول التقنية</h2>
-      <p style="font-size: 18px;">شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني.</p>
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <div class="hero-text fade-in-right">
+        <h1>الريادة في الحلول التقنية</h1>
+        <p>شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني.</p>
+      </div>
+      <div class="hero-image fade-in-left">
+        <img src="/static/images/hero_icon.jpg" alt="حلول تقنية">
+      </div>
     </div>
+  </section>
 
-    <!-- ✅ الصورة -->
-    <div style="flex: 1; min-width: 300px; animation: fadeInLeft 1s ease-in-out;">
-      <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" 
-           alt="حلول تقنية"
-           style="width: 100%; max-width: 450px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">
-    </div>
-
-  </div>
-</section>
-<!-- من نحن -->
+  <!-- من نحن -->
   <section id="about">
     <div class="container">
       <h2>من نحن</h2>
       <p>
-        شركة منارة النخبة المحدودة شركة سعودية متخصصة في تقديم خدمات تقنية
-        متكاملة تشمل التوريد، الصيانة، أنظمة المراقبة، الشبكات، السيرفرات،
-        وأنظمة البصمة.
+        شركة منارة النخبة المحدودة شركة سعودية متخصصة في تقديم خدمات تقنية متكاملة تشمل التوريد، الصيانة، أنظمة المراقبة، الشبكات، السيرفرات، وأنظمة البصمة.
       </p>
     </div>
   </section>
@@ -61,16 +52,32 @@
   <section id="services">
     <div class="container">
       <h2>خدماتنا</h2>
-      <div class="services-grid">
-        {% for service in services %}
-        <div class="service-card" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 150 }}">
-          <div class="service">
-            <img src="{{ url_for('static', filename='images/' + service.image) }}" alt="{{ service.title }}">
-            <h3>{{ service.title }}</h3>
-            <p>{{ service.description }}</p>
-          </div>
+      <div class="grid">
+        <div class="card fade-in-up">
+          <img src="/static/images/security_cameras.jpg" alt="أنظمة المراقبة">
+          <h3>أنظمة المراقبة</h3>
+          <p>تركيب وصيانة كاميرات المراقبة بأحدث التقنيات.</p>
         </div>
-        {% endfor %}
+        <div class="card fade-in-up">
+          <img src="/static/images/servers_networks.jpg" alt="الشبكات">
+          <h3>الشبكات</h3>
+          <p>بناء شبكات داخلية وربط الفروع بخبرة عالية.</p>
+        </div>
+        <div class="card fade-in-up">
+          <img src="/static/images/fingerprint_system.jpg" alt="البصمة">
+          <h3>البصمة والحضور</h3>
+          <p>أنظمة البصمة لإدارة حضور الموظفين.</p>
+        </div>
+        <div class="card fade-in-up">
+          <img src="/static/images/maintenance.jpg" alt="الدعم الفني">
+          <h3>الدعم الفني</h3>
+          <p>دعم فني دائم للحلول التقنية وتحديث الأنظمة.</p>
+        </div>
+        <div class="card fade-in-up">
+          <img src="/static/images/keyboard_mouse.jpg" alt="التوريد">
+          <h3>التوريد</h3>
+          <p>توريد جميع التجهيزات التقنية والمعدات بأعلى جودة.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -79,57 +86,34 @@
   <section id="projects">
     <div class="container">
       <h2>مشاريعنا</h2>
-      <p>
-        نفخر في شركة منارة النخبة بتنفيذ مشاريع تقنية متكاملة لصالح جهات
-        تعليمية، ومؤسسات حكومية، وشركات خاصة.
-      </p>
-      <div class="projects-gallery">
-        <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="مشروع 1" />
-        <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="مشروع 2" />
+      <div class="projects">
+        <img src="/static/images/project1.jpg" alt="مشروع 1">
+        <img src="/static/images/project2.jpg" alt="مشروع 2">
       </div>
     </div>
   </section>
 
   <!-- اتصل بنا -->
   <section id="contact">
-  <div class="container">
-    <h2>اتصل بنا</h2>
-
-    <div class="contact-info">
-
-      <p style="display: flex; align-items: center; gap: 8px;">
-        <span style="color: #d63384;">📞</span>
-        <span dir="ltr">+966-566-3616-33</span>
-      </p>
-
-      <p style="display: flex; align-items: center; gap: 8px;">
-        <span style="color: #0d6efd;">📧</span>
-        <span dir="ltr">info@mnartalnkhba.com</span>
-      </p>
-
-      <p style="display: flex; align-items: center; gap: 8px;">
-        <span style="color: #dc3545;">📍</span>
-        <span>King Faisal Dt., Riyadh 13215</span>
-      </p>
-
+    <div class="container">
+      <h2>اتصل بنا</h2>
+      <div class="contact-info">
+        <p>📞 <span dir="ltr">+966-566-3616-33</span></p>
+        <p>📧 <span dir="ltr">info@mnartalnkhba.com</span></p>
+        <p>📍 الرياض، حي الملك فيصل</p>
+      </div>
+      <form method="POST" action="/send">
+        <input type="text" name="name" placeholder="الاسم" required>
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <textarea name="message" placeholder="رسالتك" required></textarea>
+        <button type="submit">إرسال</button>
+      </form>
     </div>
-<form method="POST" action="/send">
-  <input type="text" name="name" placeholder="الاسم" required>
-  <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-  <textarea name="message" placeholder="رسالتك" required></textarea>
-  
-  <!-- ✅ زر الإرسال الوحيد -->
-  <button type="submit">إرسال</button>
-</form>
-</section>
+  </section>
 
   <footer>
     <p>© 2025 منارة النخبة المحدودة - جميع الحقوق محفوظة.</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
