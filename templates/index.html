@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>منارة النخبة - حلول تقنية</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منارة النخبة - حلول تقنية</title>
+    <!-- استدعاء ملف CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- استدعاء خطوط Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ✅ الهيدر -->
   <header>
     <nav class="navbar">
       <div class="logo">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="منارة النخبة">
+        <img src="{{ url_for('static', filename='images/logo.png') }} viewBox='0 0 24 24'><path d='M12 2L1 21h22L12 2zm0 18L5.2 9.5l1.6-2.8L12 18l5.2-11.3l1.6 2.8L12 20z'/></svg>" alt="منارة النخبة">
       </div>
       <ul class="nav-links">
+        <div class="close-btn">&times;</div>
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="#about">من نحن</a></li>
         <li><a href="#services">خدماتنا</a></li>
@@ -25,22 +30,20 @@
     </nav>
   </header>
 
-  <!-- ✅ الرئيسية -->
   <section id="home" class="hero">
-    <div class="hero-container">
+    <div class="hero-container container">
       <div class="hero-text fade-in-right">
         <h1>الريادة في الحلول التقنية</h1>
         <p>شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني، وتوريد.</p>
       </div>
       <div class="hero-image fade-in-left">
-        <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" alt="حلول تقنية">
+        <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" viewBox='0 0 24 24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-13.41L10 15.17l-2.59-2.58L6 14l4 4l8-8-1.41-1.41z'/></svg>" alt="حلول تقنية">
       </div>
     </div>
   </section>
 
-  <!-- ✅ من نحن -->
   <section id="about">
-    <div class="container">
+    <div class="container fade-in-up">
       <h2>من نحن</h2>
       <p>
         شركة منارة النخبة المحدودة شركة سعودية متخصصة في تقديم خدمات تقنية
@@ -50,53 +53,50 @@
     </div>
   </section>
 
-  <!-- ✅ الخدمات -->
   <section id="services">
     <div class="container">
       <h2>خدماتنا</h2>
       <div class="grid">
         <div class="card fade-in-up">
-          <img src="{{ url_for('static', filename='images/security_cameras.jpg') }}" alt="أنظمة المراقبة">
-          <h3>أنظمة المراقبة</h3>
-          <p>تركيب وصيانة كاميرات المراقبة بأحدث التقنيات.</p>
-        </div>
-        <div class="card fade-in-left">
-          <img src="{{ url_for('static', filename='images/servers_networks.jpg') }}" alt="الشبكات">
-          <h3>الشبكات</h3>
-          <p>بناء شبكات داخلية وربط الفروع بخبرة عالية.</p>
+            <svg xmlns="{{ url_for('static', filename='images/security_cameras.jpg') }}" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <h3>أنظمة المراقبة</h3>
+            <p>تركيب وصيانة كاميرات المراقبة بأحدث التقنيات.</p>
         </div>
         <div class="card fade-in-up">
-          <img src="{{ url_for('static', filename='images/fingerprint_system.jpg') }}" alt="البصمة">
-          <h3>البصمة والحضور</h3>
-          <p>أنظمة البصمة لإدارة حضور الموظفين.</p>
-        </div>
-        <div class="card fade-in-left">
-          <img src="{{ url_for('static', filename='images/maintenance.jpg') }}" alt="الدعم الفني">
-          <h3>الدعم الفني</h3>
-          <p>دعم فني دائم للحلول التقنية وتحديث الأنظمة.</p>
+            <svg xmlns="{{ url_for('static', filename='images/servers_networks.jpg') }}" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-wifi"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><path d="M1.42 9a16 16 0 0 1 21.16 0"></path><path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path><line x1="12" y1="20" x2="12" y2="20"></line></svg>
+            <h3>الشبكات</h3>
+            <p>بناء شبكات داخلية وربط الفروع بخبرة عالية.</p>
         </div>
         <div class="card fade-in-up">
-          <img src="{{ url_for('static', filename='images/keyboard_mouse.jpg') }}" alt="التوريد">
-          <h3>التوريد</h3>
-          <p>توريد جميع التجهيزات التقنية والمعدات بأعلى جودة.</p>
+            <svg xmlns="{{ url_for('static', filename='images/fingerprint_system.jpg') }}" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-fingerprint"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-13.41L10 15.17l-2.59-2.58L6 14l4 4l8-8-1.41-1.41z"></path></svg>
+            <h3>البصمة والحضور</h3>
+            <p>أنظمة البصمة لإدارة حضور الموظفين.</p>
+        </div>
+        <div class="card fade-in-up">
+            <svg xmlns="{{ url_for('static', filename='images/maintenance.jpg') }}" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tool"><path d="M14.7 6.3a1 1 0 0 1 0 1.4L6.45 16.55a1 1 0 0 1-1.42 0l-3.5-3.5a1 1 0 0 1 0-1.42L11.83 2.8a1 1 0 0 1 1.42 0l1.41 1.41a1 1 0 0 1 0 1.42z"></path><path d="M12.92 11.23l-3.54-3.54"></path><path d="M18.36 18.36a2 2 0 0 1-2.82 2.82l-5.3-5.3a2 2 0 0 1 2.82-2.82l5.3 5.3z"></path></svg>
+            <h3>الدعم الفني</h3>
+            <p>دعم فني دائم للحلول التقنية وتحديث الأنظمة.</p>
+        </div>
+        <div class="card fade-in-up">
+            <svg xmlns="{{ url_for('static', filename='images/keyboard_mouse.jpg') }}" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-truck"><path d="M1 3h15v11H1z"></path><path d="M16 8h4l3 3v6h-7V8z"></path><path d="M10 18H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h5"></path><path d="M18 18h-4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h4"></path><circle cx="6.5" cy="18.5" r="2.5"></circle><circle cx="17.5" cy="18.5" r="2.5"></circle></svg>
+            <h3>التوريد</h3>
+            <p>توريد جميع التجهيزات التقنية والمعدات بأعلى جودة.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ✅ المشاريع -->
   <section id="projects">
     <div class="container">
       <h2>مشاريعنا</h2>
-      <p>نفخر بتنفيذ مشاريع تقنية متكاملة لصالح جهات تعليمية، حكومية، وشركات خاصة.</p>
+      <p style="text-align: center;">نفخر بتنفيذ مشاريع تقنية متكاملة لصالح جهات تعليمية، حكومية، وشركات خاصة.</p>
       <div class="projects-gallery">
-        <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="مشروع 1">
-        <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="مشروع 2">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='{{ url_for('static', filename='images/project1.jpg') }}' viewBox='0 0 24 24'><path d='M21 21L3 3M21 3L3 21M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z'/></svg>" alt="مشروع 1" class="fade-in-up">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='{{ url_for('static', filename='images/project2.jpg') }}' viewBox='0 0 24 24'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/></svg>" alt="مشروع 2" class="fade-in-up">
       </div>
     </div>
   </section>
 
-  <!-- ✅ اتصل بنا -->
   <section id="contact">
     <div class="container">
       <h2>اتصل بنا</h2>
@@ -105,7 +105,7 @@
         <p>📧 info@mnartalnkhba.com</p>
         <p>📍 King Faisal Dt., Riyadh 13215</p>
       </div>
-      <form method="POST" action="/send">
+      <form method="POST" action="/send" class="fade-in-up">
         <input type="text" name="name" placeholder="الاسم" required>
         <input type="email" name="email" placeholder="البريد الإلكتروني" required>
         <textarea name="message" placeholder="رسالتك" required></textarea>
@@ -114,18 +114,11 @@
     </div>
   </section>
 
-  <!-- ✅ الفوتر -->
   <footer>
     <p>© 2025 منارة النخبة المحدودة - جميع الحقوق محفوظة.</p>
   </footer>
 
-  <script>
-    // ✅ القائمة المنسدلة للموبايل
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  </script>
+  <!-- استدعاء ملف JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
