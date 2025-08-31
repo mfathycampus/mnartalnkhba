@@ -4,18 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>منارة النخبة - حلول تقنية</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- مكتبة AOS للأنيميشن -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 
 <body>
 
-  <!-- الهيدر -->
+  <!-- ✅ الهيدر مع قائمة موبايل احترافية -->
   <header>
     <nav>
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo" />
-      
-      <ul>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+      </div>
+
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+      <ul class="nav-links">
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="#about">من نحن</a></li>
         <li><a href="#services">خدماتنا</a></li>
@@ -25,19 +34,15 @@
     </nav>
   </header>
 
-  <!-- الرئيسية -->
+  <!-- ✅ سكشن الرئيسية -->
   <section id="home" class="hero">
-    <div class="container hero-content">
-      <div class="fade-in-right">
+    <div class="container">
+      <div class="hero-text fade-in-right">
         <h2>الريادة في الحلول التقنية</h2>
         <p>شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني.</p>
       </div>
-
-      <div class="fade-in-left">
-        <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" 
-             alt="حلول تقنية"
-             class="hero-image"
-             data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+      <div class="hero-image fade-in-left">
+        <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" alt="حلول تقنية">
       </div>
     </div>
   </section>
@@ -54,7 +59,7 @@
     </div>
   </section>
 
-  <!-- الخدمات -->
+  <!-- خدماتنا -->
   <section id="services">
     <div class="container">
       <h2>خدماتنا</h2>
@@ -93,9 +98,9 @@
       <h2>اتصل بنا</h2>
 
       <div class="contact-info">
-        <p><span>📞</span><span dir="ltr">+966-566-3616-33</span></p>
-        <p><span>📧</span><span dir="ltr">info@mnartalnkhba.com</span></p>
-        <p><span>📍</span><span>King Faisal Dt., Riyadh 13215</span></p>
+        <p><span>📞</span> <span dir="ltr">+966-566-3616-33</span></p>
+        <p><span>📧</span> <span dir="ltr">info@mnartalnkhba.com</span></p>
+        <p><span>📍</span> King Faisal Dt., Riyadh 13215</p>
       </div>
 
       <form method="POST" action="/send">
@@ -107,10 +112,12 @@
     </div>
   </section>
 
+  <!-- الفوتر -->
   <footer>
     <p>© 2025 منارة النخبة المحدودة - جميع الحقوق محفوظة.</p>
   </footer>
 
+  <!-- JavaScript -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
