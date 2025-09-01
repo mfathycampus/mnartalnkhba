@@ -6,13 +6,19 @@
   <title>منارة النخبة - حلول تقنية</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
 
-  <!-- ✅ الهيدر -->
+  <!-- الهيدر -->
   <header>
     <nav>
-      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo" />
-      <ul>
+      <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo" class="logo">
+
+      <!-- زر القائمة للموبايل -->
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+
+      <!-- قائمة الروابط -->
+      <ul class="nav-links" id="nav-links">
         <li><a href="#home">الرئيسية</a></li>
         <li><a href="#about">من نحن</a></li>
         <li><a href="#services">خدماتنا</a></li>
@@ -22,22 +28,25 @@
     </nav>
   </header>
 
-  <!-- ✅ الرئيسية -->
+  <!-- الرئيسية -->
   <section id="home" class="hero">
-    <div class="container">
-      <div class="text fade-in-right">
+    <div class="container hero-container">
+      <!-- النص -->
+      <div class="fade-in-right">
         <h2>الريادة في الحلول التقنية</h2>
         <p>شركة سعودية تقدم حلول تقنية متكاملة: مراقبة، شبكات، بصمة، دعم فني.</p>
       </div>
-      <div class="image fade-in-left">
-        <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" alt="حلول تقنية">
+
+      <!-- الصورة -->
+      <div class="fade-in-left">
+        <img src="{{ url_for('static', filename='images/hero_icon.jpg') }}" alt="حلول تقنية" class="uniform-img">
       </div>
     </div>
   </section>
 
-  <!-- ✅ من نحن -->
+  <!-- من نحن -->
   <section id="about">
-    <div class="container fade-in-up">
+    <div class="container">
       <h2>من نحن</h2>
       <p>
         شركة منارة النخبة المحدودة شركة سعودية متخصصة في تقديم خدمات تقنية
@@ -47,33 +56,33 @@
     </div>
   </section>
 
-  <!-- ✅ الخدمات -->
+  <!-- الخدمات -->
   <section id="services">
     <div class="container">
       <h2>خدماتنا</h2>
-      <div class="grid">
-        <div class="card fade-in-up">
-          <img src="{{ url_for('static', filename='images/security_cameras.jpg') }}" alt="أنظمة المراقبة">
+      <div class="services-grid">
+        <div class="service-card fade-in-up">
+          <img src="{{ url_for('static', filename='images/security_cameras.jpg') }}" alt="أنظمة المراقبة" class="uniform-img">
           <h3>أنظمة المراقبة</h3>
           <p>تركيب وصيانة كاميرات المراقبة بأحدث التقنيات.</p>
         </div>
-        <div class="card fade-in-up">
-          <img src="{{ url_for('static', filename='images/servers_networks.jpg') }}" alt="الشبكات">
+        <div class="service-card fade-in-up">
+          <img src="{{ url_for('static', filename='images/servers_networks.jpg') }}" alt="الشبكات" class="uniform-img">
           <h3>الشبكات</h3>
           <p>بناء شبكات داخلية وربط الفروع بخبرة عالية.</p>
         </div>
-        <div class="card fade-in-up">
-          <img src="{{ url_for('static', filename='images/fingerprint_system.jpg') }}" alt="البصمة والحضور">
+        <div class="service-card fade-in-up">
+          <img src="{{ url_for('static', filename='images/fingerprint_system.jpg') }}" alt="البصمة" class="uniform-img">
           <h3>البصمة والحضور</h3>
           <p>أنظمة البصمة لإدارة حضور الموظفين.</p>
         </div>
-        <div class="card fade-in-up">
-          <img src="{{ url_for('static', filename='images/maintenance.jpg') }}" alt="الدعم الفني">
+        <div class="service-card fade-in-up">
+          <img src="{{ url_for('static', filename='images/maintenance.jpg') }}" alt="الدعم الفني" class="uniform-img">
           <h3>الدعم الفني</h3>
           <p>دعم فني دائم للحلول التقنية وتحديث الأنظمة.</p>
         </div>
-        <div class="card fade-in-up">
-          <img src="{{ url_for('static', filename='images/keyboard_mouse.jpg') }}" alt="التوريد">
+        <div class="service-card fade-in-up">
+          <img src="{{ url_for('static', filename='images/keyboard_mouse.jpg') }}" alt="التوريد" class="uniform-img">
           <h3>التوريد</h3>
           <p>توريد جميع التجهيزات التقنية والمعدات بأعلى جودة.</p>
         </div>
@@ -81,28 +90,31 @@
     </div>
   </section>
 
-  <!-- ✅ المشاريع -->
+  <!-- المشاريع -->
   <section id="projects">
     <div class="container">
       <h2>مشاريعنا</h2>
-      <p>نفخر بتنفيذ مشاريع تقنية متكاملة لصالح جهات تعليمية، حكومية، وشركات خاصة.</p>
+      <p>
+        نفخر في شركة منارة النخبة بتنفيذ مشاريع تقنية متكاملة لصالح جهات
+        تعليمية، ومؤسسات حكومية، وشركات خاصة.
+      </p>
       <div class="projects-gallery">
-        <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="مشروع 1" />
-        <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="مشروع 2" />
+        <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="مشروع 1" class="uniform-img">
+        <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="مشروع 2" class="uniform-img">
       </div>
     </div>
   </section>
 
-  <!-- ✅ اتصل بنا -->
+  <!-- اتصل بنا -->
   <section id="contact">
     <div class="container">
       <h2>اتصل بنا</h2>
-      <div class="contact-info fade-in-up">
-        <p>📞 +966-566-3616-33</p>
-        <p>📧 info@mnartalnkhba.com</p>
+      <div class="contact-info">
+        <p>📞 <span dir="ltr">+966-566-3616-33</span></p>
+        <p>📧 <span dir="ltr">info@mnartalnkhba.com</span></p>
         <p>📍 King Faisal Dt., Riyadh 13215</p>
       </div>
-      <form method="POST" action="/send" class="fade-in-up">
+      <form method="POST" action="/send">
         <input type="text" name="name" placeholder="الاسم" required>
         <input type="email" name="email" placeholder="البريد الإلكتروني" required>
         <textarea name="message" placeholder="رسالتك" required></textarea>
@@ -111,11 +123,18 @@
     </div>
   </section>
 
-  <!-- ✅ الفوتر -->
+  <!-- الفوتر -->
   <footer>
     <p>© 2025 منارة النخبة المحدودة - جميع الحقوق محفوظة.</p>
   </footer>
 
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script>
+    // فتح/غلق القائمة في الموبايل
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
